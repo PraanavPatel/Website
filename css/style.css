@@ -16,6 +16,13 @@ body {
     height: auto;
 }
 
+/* Ensure images are visible */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
 /* Styling menu icon */
 .nav-menu {
     border: none;
@@ -127,4 +134,13 @@ footer .link-group a {
 }
 footer .link-group a:hover {
     color: #fca61f;
+}
+
+/* Debug: Make missing images visible on mobile */
+@media (max-width: 768px) {
+    img {
+        display: block !important;
+        max-width: 100% !important;
+        height: auto !important;
+    }
 }
