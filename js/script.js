@@ -1,4 +1,4 @@
-// htmlcss progress circular bar 
+// HTML-CSS Progress Circular Bar
 let htmlProgress = document.querySelector(".html-css"),
   htmlValue = document.querySelector(".html-progress");
 
@@ -14,12 +14,12 @@ let progresshtml = setInterval(() => {
     htmlStartValue * 3.6
   }deg, #ededed 0deg)`;
 
-  if (htmlStartValue == htmlEndValue) {
+  if (htmlStartValue === htmlEndValue) {
     clearInterval(progresshtml);
   }
 }, htmlspeed);
 
-// javasript progress circular bar 
+// JavaScript Progress Circular Bar
 let javascriptProgress = document.querySelector(".javascript"),
   javascriptValue = document.querySelector(".javascript-progress");
 
@@ -35,12 +35,12 @@ let progressjs = setInterval(() => {
     javascriptStartValue * 3.6
   }deg, #ededed 0deg)`;
 
-  if (javascriptStartValue == javascriptEndValue) {
+  if (javascriptStartValue === javascriptEndValue) {
     clearInterval(progressjs);
   }
 }, jsspeed);
 
-// php progress circular bar 
+// PHP Progress Circular Bar
 let phpProgress = document.querySelector(".php"),
   phpValue = document.querySelector(".php-progress");
 
@@ -56,12 +56,12 @@ let progressphp = setInterval(() => {
     phpStartValue * 3.6
   }deg, #ededed 0deg)`;
 
-  if (phpStartValue == phpEndValue) {
+  if (phpStartValue === phpEndValue) {
     clearInterval(progressphp);
   }
 }, phpspeed);
 
-// reactjs progress circular bar 
+// ReactJS Progress Circular Bar
 let reactProgress = document.querySelector(".reactjs"),
   reactValue = document.querySelector(".reactjs-progress");
 
@@ -77,17 +77,16 @@ let progressreact = setInterval(() => {
     reactStartValue * 3.6
   }deg, #ededed 0deg)`;
 
-  if (reactStartValue == reactEndValue) {
+  if (reactStartValue === reactEndValue) {
     clearInterval(progressreact);
   }
 }, rjsspeed);
 
-
-// filter using javascript
+// Filter Using JavaScript
 $(document).ready(function () {
   $(".filter-item").click(function () {
     const value = $(this).attr("data-filter");
-    if (value == "all") {
+    if (value === "all") {
       $(".post").show("1000");
     } else {
       $(".post")
@@ -100,45 +99,38 @@ $(document).ready(function () {
   });
 });
 
+// Sticky Navbar
+document.addEventListener("DOMContentLoaded", function () {
+  const navbar = document.getElementById("navbar-top");
+  const body = document.body;
 
-// javascript for sticky navbar even if u scroll the navbar will be fixed
-document.addEventListener("DOMContentLoaded", function(){
-  window.addEventListener('scroll', function() {
-      if (window.scrollY > 50) {
-        document.getElementById('navbar-top').classList.add('fixed-top');
-        // add padding top to show content behind navbar
-        navbar_height = document.querySelector('.navbar').offsetHeight;
-        document.body.style.paddingTop = navbar_height + 'px';
-      } else {
-        document.getElementById('navbar-top').classList.remove('fixed-top');
-         // remove padding top from body
-        document.body.style.paddingTop = '0';
-      } 
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 50) {
+      navbar.classList.add("fixed-top");
+      const navbarHeight = navbar.offsetHeight;
+      body.style.paddingTop = navbarHeight + "px";
+    } else {
+      navbar.classList.remove("fixed-top");
+      body.style.paddingTop = "0";
+    }
   });
-}); 
+});
 
-
-// adding funtionality to back to top button 
-
-//Get the button
+// Back to Top Button
 let mybutton = document.getElementById("btn-back-to-top");
 
-// When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function () {
   scrollFunction();
 };
+
 function scrollFunction() {
-  if (
-    document.body.scrollTop > 20 ||
-    document.documentElement.scrollTop > 20
-  ) {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     mybutton.style.display = "block";
   } else {
     mybutton.style.display = "none";
   }
 }
-// When the user clicks on the button, scroll to the top of the document
-mybutton.addEventListener("click",function(){
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
+
+mybutton.addEventListener("click", function () {
+  window.scrollTo({ top: 0, behavior: "smooth" });
 });
